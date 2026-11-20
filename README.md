@@ -1,92 +1,84 @@
+# PasswordGuard V2
 
-# PasswordGuard 🔐
+Analisador de força de senhas desenvolvido em C# com .NET 10, com foco em fundamentos de segurança, detecção de padrões previsíveis e avaliação heurística de senhas.
 
-**PasswordGuard** é uma aplicação de auditoria de senhas desenvolvida em C# e .NET 10.0.
+## Sobre o projeto
 
-O projeto analisa características de senhas, identifica padrões previsíveis e apresenta uma classificação acompanhada de recomendações para melhorar sua qualidade.
+O PasswordGuard é uma aplicação de console que analisa características de uma senha e fornece uma avaliação estimada de sua força. O objetivo é identificar comportamentos previsíveis, avaliar a composição da senha e apresentar recomendações para melhorias.
 
 ## Funcionalidades
 
-- Análise do comprimento da senha.
-- Identificação de letras maiúsculas e minúsculas.
-- Identificação de números e símbolos.
-- Detecção de padrões previsíveis.
-- Identificação de caracteres repetidos.
-- Detecção de sequências consecutivas.
-- Sistema de pontuação de 0 a 6.
-- Classificação em Fraca, Razoável ou Forte.
-- Recomendações automáticas de melhoria.
+- Entrada de senha com caracteres mascarados no terminal.
+- Análise de comprimento.
+- Identificação de letras maiúsculas e minúsculas, números e símbolos.
+- Detecção de padrões comuns e palavras previsíveis.
+- Identificação de sequências crescentes e decrescentes.
+- Detecção de caracteres repetidos consecutivamente.
+- Estimativa teórica de entropia.
+- Sistema de pontuação de 0 a 100.
+- Classificação em cinco níveis de força.
+- Recomendações de segurança personalizadas.
 
-## 🛠️ Tecnologias utilizadas
+## Classificação
+
+| Pontuação | Classificação |
+|---|---|
+| 0–29 | Muito fraca |
+| 30–49 | Fraca |
+| 50–69 | Razoável |
+| 70–89 | Forte |
+| 90–100 | Muito forte |
+
+## Tecnologias utilizadas
 
 - C#
-- .NET 10.0
-- Visual Studio Code
+- .NET 10
+- Programação orientada a objetos
+- Git e GitHub
 
-## 📂 Estrutura do projeto
+## Como executar
 
-```text
-PasswordGuard/
-├── Program.cs
-├── AnalisadorSenha.cs
-├── ResultadoAnalise.cs
-├── PasswordGuard.csproj
-└── README.md
-```
+É necessário ter o SDK .NET instalado.
 
-## ▶️ Como executar
-
-1. Instale o .NET 10 SDK.
-2. Clone este repositório:
+Clone o repositório:
 
 ```bash
 git clone https://github.com/GuilhermeCarv24/PasswordGuard.git
 ```
 
-3. Entre na pasta:
+Entre na pasta do projeto:
 
 ```bash
 cd PasswordGuard
 ```
 
-4. Execute o projeto:
+Execute:
 
 ```bash
 dotnet run
 ```
 
-## Como funciona
+## Conceitos aplicados
 
-O PasswordGuard utiliza regras heurísticas para analisar características da senha.
+- Lógica de programação
+- Orientação a objetos
+- Métodos e classes
+- Manipulação de strings
+- Condicionais e loops
+- Análise heurística
+- Segurança de senhas
+- Tratamento de entrada no console
 
-A pontuação considera comprimento, variedade de caracteres e penalidades por padrões previsíveis, repetições e sequências.
+## Limitações de segurança
 
-A classificação é dividida em:
+O PasswordGuard utiliza heurísticas próprias para estimar a força de uma senha. A pontuação e a entropia são estimativas educativas e não representam garantia de resistência a ataques.
 
-| Pontuação | Classificação |
-|---|---|
-| 0 a 2 | Fraca |
-| 3 a 4 | Razoável |
-| 5 a 6 | Forte |
+A ferramenta não consulta bases de senhas vazadas, não calcula tempo real de quebra e não substitui gerenciadores de senhas ou mecanismos profissionais de avaliação.
 
-## 🔒 Privacidade e limitações
+As senhas são analisadas localmente pela aplicação e não são enviadas para servidores externos.
 
-- A aplicação não armazena as senhas analisadas.
-- A análise é realizada localmente.
-- A pontuação é educativa e heurística, não representa uma garantia de segurança.
-- O projeto não substitui um gerenciador de senhas ou uma avaliação especializada.
+## Desenvolvido por
 
-## 🎯 Objetivo do projeto
+Guilherme Carvalho
 
-Este projeto foi desenvolvido com o objetivo de praticar programação em C#, orientação a objetos, lógica de programação e conceitos fundamentais de segurança da informação.
-
-## Melhorias futuras
-
-- Interface gráfica.
-- Testes automatizados.
-- Detecção mais avançada de padrões.
-- Integração com serviços de verificação de senhas comprometidas, preservando a privacidade.
-
----
-
-Desenvolvido por **Guilherme Carvalho**.
+Projeto desenvolvido para estudos de programação, cibersegurança e evolução prática em C# e .NET.
